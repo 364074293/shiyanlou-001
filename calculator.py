@@ -7,6 +7,7 @@ try:
     def get_salary(ratio,deductions):
        
         salary_after=tax_before - (taxable*ratio-deductions)
+ 
         print(ID+':'+format(salary_after,'.2f'))
     
     
@@ -36,7 +37,7 @@ try:
 
         try:
             tax_before=int(salary_before)*(1-0.165)
-            taxable=tax_before*(1-0.165)-3500
+            taxable=tax_before-3500
             get_salary_after()
         except:  
             print("Parameter Error")
