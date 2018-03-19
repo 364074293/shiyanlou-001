@@ -8,7 +8,7 @@ try:
        
         salary_after=tax_before - (taxable*ratio-deductions)
  
-        print(ID+':'+format(salary_after,'.2f'))
+        print(str(ID)+':'+format(salary_after,'.2f'))
     
     
     def get_salary_after():
@@ -31,16 +31,16 @@ try:
         else:
             print('输入有误')
     sys.argv.pop(0)
-    for i in sys.argv:
-        ID=i.split(':')[0]
-        salary_before=i.split(':')[1]
-
-        try:
+    try:
+        for i in sys.argv:
+            a=i.split(':')[0]
+            ID= int(a)
+            salary_before=i.split(':')[1]
             tax_before=int(salary_before)*(1-0.165)
             taxable=tax_before-3500
             get_salary_after()
-        except:  
-            print("Parameter Error")
+    except:  
+        print("Parameter Error")
 	
 
         
